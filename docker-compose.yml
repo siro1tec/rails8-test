@@ -1,0 +1,33 @@
+services:
+  db:
+    image: mysql:8.0
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password1!
+    ports:
+      - "3307:3306"
+    networks:
+      - mynetwork
+
+  web:
+    build: .
+    command: tail -f /dev/null
+    volumes:
+      - .:/rails8-test
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    networks:
+      - mynetwork
+    environment:
+      RAILS_DATABASE_USERNAME: root
+      RAILS_DATABASE_PASSWORD: password1!
+
+volumes:
+  db_data: {}
+
+networks:
+  mynetwork:
+    driver: bridge

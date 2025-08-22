@@ -1,0 +1,4 @@
+alias rails='bundle exec rails'
+alias railss='bundle exec rails server -b 0.0.0.0'
+alias railss_ssl='bundle exec rails s -b "ssl://0.0.0.0?key=config/certs/localhost.key&cert=config/certs/localhost.cert"'
+alias mtu='ip link set eth0 mtu 1200'

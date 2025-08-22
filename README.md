@@ -30,3 +30,24 @@ rails db:create
 ```
 bin/rails generate scaffold product name:string price:integer description:text
 ```
+
+## jsbundlingへの切り替え
+```
+# gemのインストール
+gem "jsbundling-rails"
+bundle install
+
+# esbuildのインストール
+bin/rails javascript:install:esbuild
+※yarnはnpmにいい感じに書き換え
+
+# foremanのインストール
+gem "foreman"
+bundle install
+```
+
+## stimlusの導入
+```
+npm install @hotwired/stimulus
+javascript/以下にapplication.jsやcontrollersを作る
+```

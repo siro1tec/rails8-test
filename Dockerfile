@@ -14,13 +14,14 @@ RUN gem install bundler -v '2.7.1'
 
 WORKDIR /rails8-test
 
-# Gemの依存関係をインストール
+# gem file install
 COPY Gemfile* ./
 RUN bundle install
 
-# JavaScriptの依存関係をインストール
-# COPY package.json ./
-# RUN npm install
+# npm install
+COPY package.json ./
+COPY package-lock.json ./
+RUN npm install
 
 # エイリアスを設定
 COPY ./.alias /root

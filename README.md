@@ -25,3 +25,8 @@ bundle install
 # db:create
 rails db:create
 ```
+
+## productsの追加
+```
+bin/rails generate scaffold product name:string price:integer description:text
+```

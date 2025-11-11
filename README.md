@@ -51,3 +51,9 @@ bundle install
 npm install @hotwired/stimulus
 javascript/以下にapplication.jsやcontrollersを作る
 ```
+
+## turboの導入
+```
+npm install @hotwired/turbo-rails
+javascript/application.jsでimportを記述
+```
